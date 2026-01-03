@@ -1,4 +1,4 @@
-# Code for Figure 1
+# Code for Figure 2
 a = 0.5   # true parameters
 b = 1     # true parameters
 sigma = 0.05
@@ -84,7 +84,7 @@ legend("topright", legend = paste("b = ", b), col = "red", lwd = 3, lty = 2,
        bty = "n")
 
 
-# code for figure 2
+# code for figure 3
 
 a = 0.5
 b = 1
@@ -122,7 +122,7 @@ legend("topright", legend = paste("b = ", b), col = "red", lwd = 3, lty = 2,
        bty = "n")
 
 
-# code for figure 3
+# code for figure 4
 a = 0.5
 b = 1
 sigma_delta = 0.05
@@ -159,3 +159,4 @@ plot(n_vals, b_hat_o, type = "l", col = "darkgrey", lwd = 2,
 abline(h = b, col = "red", lwd = 3, lty = 2)
 legend("topright", legend = paste("b = ", b), col = "red", lwd = 3, lty = 2, 
        bty = "n")
+
