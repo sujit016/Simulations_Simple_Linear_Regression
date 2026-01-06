@@ -1,6 +1,6 @@
 # Code for Figure 2
-a = 0.5   # true parameters
-b = 1     # true parameters
+a = 0.5
+b = 1
 sigma = 0.05
 
 n_vals = seq(5, 10000, by = 5)
@@ -31,7 +31,7 @@ for (i in 1:length(n_vals)) {
    a_hat_v[i] = mean(y) - b_hat_v[i]*mean(x)
    
    # horizontal
-   b_hat_h[i] = (syy/sxy)^(-1)
+   b_hat_h[i] = (syy/sxy)^(1)
    a_hat_h[i] = mean(y) - b_hat_h[i]*mean(x)
    
    # orthogonal
@@ -41,51 +41,49 @@ for (i in 1:length(n_vals)) {
 
 par(mfrow = c(2, 3))
 plot(n_vals, a_hat_h, type = "l", col = "darkgrey", lwd = 2, 
-     xlab = "sample size (n)", ylab = expression(widehat(a["h"])), 
-     main =expression(widehat(a["h"])) )
+     xlab = "sample size (n)", ylab = "", 
+     main =expression(widehat(a["n"])^"h"))
 abline(h = a, col = "red", lwd = 3, lty = 2)
-legend("topright", legend = paste("a = ", a), col = "red", lwd = 3, lty = 2, 
-       bty = "n")
+legend("topright", legend = paste("a = ", a), col = "red", lwd = 3, 
+       lty = 2, bty = "n")
 
 plot(n_vals, a_hat_v, type = "l", col = "darkgrey", lwd = 2, 
-     xlab = "sample size (n)", ylab = expression(widehat(a["v"])), 
-     main =expression(widehat(a["v"])))
+     xlab = "sample size (n)", ylab = "", 
+     main =expression(widehat(a["n"])^"v"))
 abline(h = a, col = "red", lwd = 3, lty = 2)
-legend("topright", legend = paste("a = ", a), col = "red", lwd = 3, lty = 2, 
-       bty = "n")
+legend("topright", legend = paste("a = ", a), col = "red", lwd = 3, 
+       lty = 2,  bty = "n")
 
 plot(n_vals, a_hat_o, type = "l", col = "darkgrey", lwd = 2, 
-     xlab = "sample size (n)", ylab = expression(widehat(a["o"])), 
-     main =expression(widehat(a["o"])))
+     xlab = "sample size (n)", ylab = , 
+     main = expression(widehat(a["n"])^"o"))
 abline(h = a, col = "red", lwd = 3, lty = 2)
-legend("topright", legend = paste("a = ", a), col = "red", lwd = 3, lty = 2, 
-       bty = "n")
+legend("topright", legend = paste("a = ", a), col = "red", lwd = 3, 
+       lty = 2, bty = "n")
 
 
 plot(n_vals, b_hat_h, type = "l", col = "darkgrey", lwd = 2, 
-     xlab = "sample size (n)", ylab = expression(widehat(b["h"])), 
-     main = expression(widehat(b["h"])))
+     xlab = "sample size (n)", ylab = "", 
+     main = expression(widehat(b["n"])^"h"))
 abline(h = b, col = "red", lwd = 3, lty = 2)
-legend("topright", legend = paste("b = ", b), col = "red", lwd = 3, lty = 2, 
-       bty = "n")
+legend("topright", legend = paste("b = ", b), col = "red", lwd = 3, 
+       lty =2, bty = "n")
 
 plot(n_vals, b_hat_v, type = "l", col = "darkgrey", lwd = 2, 
-     xlab = "sample size (n)", ylab = expression(widehat(b["v"])), 
-     main =expression(widehat(b["v"])))
+     xlab = "sample size (n)", ylab = "", 
+     main =expression(widehat(b["n"])^"v"))
 abline(h = b, col = "red", lwd = 3, lty = 2)
-legend("topright", legend = paste("b = ", b), col = "red", lwd = 3, lty = 2, 
-       bty = "n")
+legend("topright", legend = paste("b = ", b), col = "red", lwd = 3, 
+       lty = 2, bty = "n")
 
 plot(n_vals, b_hat_o, type = "l", col = "darkgrey", lwd = 2, 
-     xlab = "sample size (n)", ylab = expression(widehat(b["o"])),
-     main =expression(widehat(b["o"])))
+     xlab = "sample size (n)", ylab = "",
+     main =expression(widehat(b["n"])^"o"))
 abline(h = b, col = "red", lwd = 3, lty = 2)
-legend("topright", legend = paste("b = ", b), col = "red", lwd = 3, lty = 2, 
-       bty = "n")
-
+legend("topright", legend = paste("b = ", b), col = "red", lwd = 3, 
+       lty = 2, bty = "n")
 
 # code for figure 3
-
 a = 0.5
 b = 1
 sigma = 0.05
@@ -107,20 +105,18 @@ for (i in 1:length(n_vals)) {
 
 par(mfrow = c(1, 2))
 plot(n_vals, a_hat_h, type = "l", col = "darkgrey", lwd = 2, 
-     xlab = "sample size (n)", ylab = expression(widehat(a["h"])), 
-     main =expression(widehat(a["h"])) )
+     xlab = "sample size (n)", ylab = "", 
+     main =expression(widehat(a["n"])^"h"))
 abline(h = a, col = "red", lwd = 3, lty = 2)
-legend("topright", legend = paste("a = ", a), col = "red", lwd = 3, lty = 2, 
-       bty = "n")
-
+legend("topright", legend = paste("a = ", a), col = "red", lwd = 3, 
+       lty = 2, bty = "n")
 
 plot(n_vals, b_hat_h, type = "l", col = "darkgrey", lwd = 2, 
-     xlab = "sample size (n)", ylab = expression(widehat(b["h"])), 
-     main = expression(widehat(b["h"])))
+     xlab = "sample size (n)", ylab = "", 
+     main = expression(widehat(b["n"])^"h"))
 abline(h = b, col = "red", lwd = 3, lty = 2)
-legend("topright", legend = paste("b = ", b), col = "red", lwd = 3, lty = 2, 
-       bty = "n")
-
+legend("topright", legend = paste("b = ", b), col = "red", lwd = 3, 
+       lty = 2, bty = "n")
 
 # code for figure 4
 a = 0.5
@@ -147,16 +143,16 @@ for (i in 1:length(n_vals)) {
 
 par(mfrow = c(1, 2))
 plot(n_vals, a_hat_o, type = "l", col = "darkgrey", lwd = 2, 
-     xlab = "sample size (n)", ylab = expression(widehat(a["o"])), 
-     main =expression(widehat(a["o"])))
+     xlab = "sample size (n)", ylab = , 
+     main = expression(widehat(a["n"])^"o"))
 abline(h = a, col = "red", lwd = 3, lty = 2)
-legend("topright", legend = paste("a = ", a), col = "red", lwd = 3, lty = 2, 
-       bty = "n")
+legend("topright", legend = paste("a = ", a), col = "red", lwd = 3, 
+       lty = 2, bty = "n")
 
 plot(n_vals, b_hat_o, type = "l", col = "darkgrey", lwd = 2, 
-     xlab = "sample size (n)", ylab = expression(widehat(b["o"])),
-     main =expression(widehat(b["o"])))
+     xlab = "sample size (n)", ylab = "",
+     main =expression(widehat(b["n"])^"o"))
 abline(h = b, col = "red", lwd = 3, lty = 2)
-legend("topright", legend = paste("b = ", b), col = "red", lwd = 3, lty = 2, 
-       bty = "n")
+legend("topright", legend = paste("b = ", b), col = "red", lwd = 3, 
+       lty = 2, bty = "n")
 
