@@ -2,7 +2,7 @@
 a = 0.5
 b = 1
 sigma = 0.05
-
+set.seed(78)
 n_vals = seq(5, 10000, by = 5)
 
 # vertical
@@ -87,7 +87,7 @@ legend("topright", legend = paste("b = ", b), col = "red", lwd = 3,
 a = 0.5
 b = 1
 sigma = 0.05
-
+set.seed(123)
 n_vals = seq(5, 10000, by = 5)
 a_hat_h = numeric(length = length(n_vals))
 b_hat_h = numeric(length = length(n_vals))
@@ -123,7 +123,7 @@ a = 0.5
 b = 1
 sigma_delta = 0.05
 sigma_eps = 0.05
-
+set.seed(143)
 n_vals = seq(5, 10000, by = 5)
 a_hat_o = numeric(length = length(n_vals))
 b_hat_o = numeric(length = length(n_vals))
@@ -155,4 +155,5 @@ plot(n_vals, b_hat_o, type = "l", col = "darkgrey", lwd = 2,
 abline(h = b, col = "red", lwd = 3, lty = 2)
 legend("topright", legend = paste("b = ", b), col = "red", lwd = 3, 
        lty = 2, bty = "n")
+
 
