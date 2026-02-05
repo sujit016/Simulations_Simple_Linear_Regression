@@ -143,7 +143,7 @@ for (i in 1:length(n_vals)) {
 
 par(mfrow = c(1, 2))
 plot(n_vals, a_hat_o, type = "l", col = "darkgrey", lwd = 2, 
-     xlab = "sample size (n)", ylab = , 
+     xlab = "sample size (n)", ylab = "", 
      main = expression(widehat(a["n"])^"o"))
 abline(h = a, col = "red", lwd = 3, lty = 2)
 legend("topright", legend = paste("a = ", a), col = "red", lwd = 3, 
@@ -155,5 +155,6 @@ plot(n_vals, b_hat_o, type = "l", col = "darkgrey", lwd = 2,
 abline(h = b, col = "red", lwd = 3, lty = 2)
 legend("topright", legend = paste("b = ", b), col = "red", lwd = 3, 
        lty = 2, bty = "n")
+
 
 
