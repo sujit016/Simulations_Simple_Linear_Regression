@@ -8,11 +8,9 @@ n_vals = seq(5, 10000, by = 5)
 # vertical
 a_hat_v = numeric(length = length(n_vals))
 b_hat_v = numeric(length = length(n_vals))
-
 # horizontal
 a_hat_h = numeric(length = length(n_vals))
 b_hat_h = numeric(length = length(n_vals))
-
 # orthogonal
 a_hat_o = numeric(length = length(n_vals))
 b_hat_o = numeric(length = length(n_vals))
@@ -25,20 +23,16 @@ for (i in 1:length(n_vals)) {
    sxx = sum((x - mean(x))^2)
    syy = sum((y - mean(y))^2)
    sxy = sum((x - mean(x))*(y - mean(y)))
-   
    # vertical
    b_hat_v[i] = sxy/sxx
    a_hat_v[i] = mean(y) - b_hat_v[i]*mean(x)
-   
    # horizontal
    b_hat_h[i] = (syy/sxy)^(1)
    a_hat_h[i] = mean(y) - b_hat_h[i]*mean(x)
-   
    # orthogonal
    b_hat_o[i] = (syy - sxx + sqrt((syy - sxx)^2 + 4 * sxy^2)) / (2 * sxy)
    a_hat_o[i] = mean(y) - b_hat_o[i]*mean(x)
 }
-
 par(mfrow = c(2, 3))
 plot(n_vals, a_hat_h, type = "l", col = "darkgrey", lwd = 2, 
      xlab = "sample size (n)", ylab = "", 
@@ -46,36 +40,30 @@ plot(n_vals, a_hat_h, type = "l", col = "darkgrey", lwd = 2,
 abline(h = a, col = "red", lwd = 3, lty = 2)
 legend("topright", legend = paste("a = ", a), col = "red", lwd = 3, 
        lty = 2, bty = "n")
-
 plot(n_vals, a_hat_v, type = "l", col = "darkgrey", lwd = 2, 
      xlab = "sample size (n)", ylab = "", 
      main =expression(widehat(a["n"])^"v"))
 abline(h = a, col = "red", lwd = 3, lty = 2)
 legend("topright", legend = paste("a = ", a), col = "red", lwd = 3, 
        lty = 2,  bty = "n")
-
 plot(n_vals, a_hat_o, type = "l", col = "darkgrey", lwd = 2, 
      xlab = "sample size (n)", ylab = , 
      main = expression(widehat(a["n"])^"o"))
 abline(h = a, col = "red", lwd = 3, lty = 2)
 legend("topright", legend = paste("a = ", a), col = "red", lwd = 3, 
        lty = 2, bty = "n")
-
-
 plot(n_vals, b_hat_h, type = "l", col = "darkgrey", lwd = 2, 
      xlab = "sample size (n)", ylab = "", 
      main = expression(widehat(b["n"])^"h"))
 abline(h = b, col = "red", lwd = 3, lty = 2)
 legend("topright", legend = paste("b = ", b), col = "red", lwd = 3, 
        lty =2, bty = "n")
-
 plot(n_vals, b_hat_v, type = "l", col = "darkgrey", lwd = 2, 
      xlab = "sample size (n)", ylab = "", 
      main =expression(widehat(b["n"])^"v"))
 abline(h = b, col = "red", lwd = 3, lty = 2)
 legend("topright", legend = paste("b = ", b), col = "red", lwd = 3, 
        lty = 2, bty = "n")
-
 plot(n_vals, b_hat_o, type = "l", col = "darkgrey", lwd = 2, 
      xlab = "sample size (n)", ylab = "",
      main =expression(widehat(b["n"])^"o"))
@@ -101,8 +89,6 @@ for (i in 1:length(n_vals)) {
    b_hat_h[i] = (syy/sxy)
    a_hat_h[i] = mean(y) - b_hat_h[i]*mean(x)
 }
-
-
 par(mfrow = c(1, 2))
 plot(n_vals, a_hat_h, type = "l", col = "darkgrey", lwd = 2, 
      xlab = "sample size (n)", ylab = "", 
@@ -110,7 +96,6 @@ plot(n_vals, a_hat_h, type = "l", col = "darkgrey", lwd = 2,
 abline(h = a, col = "red", lwd = 3, lty = 2)
 legend("topright", legend = paste("a = ", a), col = "red", lwd = 3, 
        lty = 2, bty = "n")
-
 plot(n_vals, b_hat_h, type = "l", col = "darkgrey", lwd = 2, 
      xlab = "sample size (n)", ylab = "", 
      main = expression(widehat(b["n"])^"h"))
@@ -139,8 +124,6 @@ for (i in 1:length(n_vals)) {
    b_hat_o[i] = (syy - sxx + sqrt((syy - sxx)^2 + 4 * sxy^2)) / (2 * sxy)
    a_hat_o[i] = mean(y) - b_hat_o[i]*mean(x)
 }
-
-
 par(mfrow = c(1, 2))
 plot(n_vals, a_hat_o, type = "l", col = "darkgrey", lwd = 2, 
      xlab = "sample size (n)", ylab = "", 
@@ -148,13 +131,9 @@ plot(n_vals, a_hat_o, type = "l", col = "darkgrey", lwd = 2,
 abline(h = a, col = "red", lwd = 3, lty = 2)
 legend("topright", legend = paste("a = ", a), col = "red", lwd = 3, 
        lty = 2, bty = "n")
-
 plot(n_vals, b_hat_o, type = "l", col = "darkgrey", lwd = 2, 
      xlab = "sample size (n)", ylab = "",
      main =expression(widehat(b["n"])^"o"))
 abline(h = b, col = "red", lwd = 3, lty = 2)
 legend("topright", legend = paste("b = ", b), col = "red", lwd = 3, 
        lty = 2, bty = "n")
-
-
-
